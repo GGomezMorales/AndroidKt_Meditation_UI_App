@@ -1,4 +1,4 @@
-package com.example.meditationuiapp.ui.theme
+package com.example.meditationuiapp.presentation.theme
 
 import androidx.compose.ui.graphics.Color
 
