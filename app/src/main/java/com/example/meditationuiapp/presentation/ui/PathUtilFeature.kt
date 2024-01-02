@@ -9,6 +9,6 @@ fun Path.standardQuadFromTo(from: Offset, to: Offset) {
         from.x,
         from.y,
         abs(from.x + to.x) / 2f,
-        abs(from.x + to.x) / 2f
+        abs(from.y + to.y) / 2f
     )
 }

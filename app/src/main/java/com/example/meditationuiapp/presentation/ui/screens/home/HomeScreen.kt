@@ -5,12 +5,14 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.meditationuiapp.R
 import com.example.meditationuiapp.domain.Feature
 import com.example.meditationuiapp.presentation.ui.composables.BottomNavigationMenu
 import com.example.meditationuiapp.presentation.ui.composables.ChipSection
-import com.example.meditationuiapp.presentation.ui.composables.CurrentMeditationSetion
+import com.example.meditationuiapp.presentation.ui.composables.CurrentMeditationSection
 import com.example.meditationuiapp.presentation.ui.composables.FeatureSection
 import com.example.meditationuiapp.presentation.ui.composables.GreetingSection
 import com.example.meditationuiapp.presentation.ui.screens.BottomMenuContent
@@ -28,6 +30,7 @@ import com.example.meditationuiapp.presentation.ui.theme.OrangeYellow1
 import com.example.meditationuiapp.presentation.ui.theme.OrangeYellow2
 import com.example.meditationuiapp.presentation.ui.theme.OrangeYellow3
 
+@Preview
 @Composable
 fun HomeScreen(
 //    navController: NavHostController,
@@ -36,7 +39,8 @@ fun HomeScreen(
     Box(
         modifier = Modifier
             .background(DeepBlue)
-            .fillMaxSize()
+            .fillMaxSize(),
+        contentAlignment = Alignment.BottomCenter
     ) {
         Column {
             GreetingSection()
@@ -49,11 +53,11 @@ fun HomeScreen(
                     "Mindfulness"
                 )
             )
-            CurrentMeditationSetion()
+            CurrentMeditationSection()
             FeatureSection(
                 features = listOf(
                     Feature(
-                        title = "Slepp meditation",
+                        title = "Sleep meditation",
                         iconId = R.drawable.ic_headphone,
                         BlueViolet1,
                         BlueViolet2,

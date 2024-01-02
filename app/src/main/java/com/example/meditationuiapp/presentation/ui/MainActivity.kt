@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import com.example.meditationuiapp.presentation.ui.screens.home.HomeScreen
 import com.example.meditationuiapp.presentation.ui.screens.home.HomeViewModel
-import com.example.meditationuiapp.presentation.ui.theme.MeditationUIAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,9 +14,7 @@ class MainActivity : ComponentActivity() {
 
         super.onCreate(savedInstanceState)
         setContent {
-            MeditationUIAppTheme {
-                HomeScreen()
-            }
+            HomeScreen()
         }
     }
 }

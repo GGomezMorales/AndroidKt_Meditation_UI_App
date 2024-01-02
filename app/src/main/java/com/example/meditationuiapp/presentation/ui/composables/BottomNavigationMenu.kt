@@ -25,7 +25,7 @@ import com.example.meditationuiapp.presentation.ui.theme.DeepBlue
 fun BottomNavigationMenu(
     items: List<BottomMenuContent>,
     modifier: Modifier = Modifier,
-    activeHeighColor: Color = ButtonBlue,
+    activeHeightColor: Color = ButtonBlue,
     activeTextColor: Color = Color.White,
     inactiveTextColor: Color = AquaBlue,
     initialSelectedItemIndex: Int = 0
@@ -36,7 +36,7 @@ fun BottomNavigationMenu(
 
     Row(
         horizontalArrangement = Arrangement.SpaceAround,
-        verticalAlignment = Alignment.CenterVertically,
+        verticalAlignment = Alignment.Bottom,
         modifier = modifier
             .fillMaxWidth()
             .background(DeepBlue)
@@ -46,7 +46,7 @@ fun BottomNavigationMenu(
             BottomMenuItem(
                 item = item,
                 isSelected = index == selectedItemIndex,
-                activeHeighColor = activeHeighColor,
+                activeHeighColor = activeHeightColor,
                 activeTextColor = activeTextColor,
                 inactiveTextColor = inactiveTextColor
             ) {

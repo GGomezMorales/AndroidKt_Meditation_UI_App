@@ -21,9 +21,12 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.meditationuiapp.R
 import com.example.meditationuiapp.domain.Feature
 import com.example.meditationuiapp.presentation.ui.standardQuadFromTo
 import com.example.meditationuiapp.presentation.ui.theme.ButtonBlue
@@ -97,7 +100,9 @@ fun FeatureItem(
         ) {
             Text(
                 text = feature.title,
-                style = MaterialTheme.typography.titleMedium,
+                color = TextWhite,
+                fontFamily = FontFamily(Font(R.font.oxygen_bold)),
+                fontSize = 18.sp,
                 lineHeight = 26.sp,
                 modifier = Modifier.align(Alignment.TopStart)
             )
@@ -112,17 +117,16 @@ fun FeatureItem(
                 colors = ButtonDefaults.buttonColors(
                     containerColor = ButtonBlue
                 ),
-                shape = RoundedCornerShape(10),
+                shape = RoundedCornerShape(20),
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
-                    .padding(vertical = 6.dp, horizontal = 15.dp)
+                    .padding(vertical = 0.dp, horizontal = 0.dp)
             ) {
                 Text(
                     text = "Start",
-                    style = MaterialTheme.typography.titleMedium,
                     color = TextWhite,
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Bold
+                    fontFamily = FontFamily(Font(R.font.oxygen_bold)),
+                    fontSize = 14.sp
                     )
             }
         }

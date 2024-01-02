@@ -15,7 +15,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
+import com.example.meditationuiapp.R
 import com.example.meditationuiapp.presentation.ui.theme.AquaBlue
 import com.example.meditationuiapp.presentation.ui.theme.ButtonBlue
 
@@ -50,7 +53,8 @@ fun BottomMenuItem(
         }
         Text(
             text = item.title,
-            color = if (isSelected) activeTextColor else inactiveTextColor
+            color = if (isSelected) activeTextColor else inactiveTextColor,
+            fontFamily = FontFamily(Font(R.font.oxygen_regular))
         )
     }
 }
