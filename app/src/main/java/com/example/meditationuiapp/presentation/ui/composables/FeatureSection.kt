@@ -11,7 +11,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.meditationuiapp.domain.Feature
 
@@ -20,17 +19,19 @@ fun FeatureSection(
     features: List<Feature>
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
-        Text(text = "Features",
+        Text(
+            text = "Features",
             style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.padding(15.dp))
+            modifier = Modifier.padding(15.dp)
+        )
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
             contentPadding = PaddingValues(start = 7.5.dp, end = 7.5.dp, bottom = 100.dp),
             modifier = Modifier.fillMaxHeight()
-            ) {
-                items(features.size) {
-
-                }
+        ) {
+            items(features.size) {
+                FeatureItem(feature = features[it])
+            }
         }
     }
 }
