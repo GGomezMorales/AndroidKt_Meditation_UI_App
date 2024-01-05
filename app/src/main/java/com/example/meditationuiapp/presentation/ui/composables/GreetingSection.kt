@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,11 +18,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.meditationuiapp.R
 import com.example.meditationuiapp.presentation.ui.theme.TextWhite
 
+@Preview
 @Composable
 fun GreetingSection(
     username: String = "Username"
@@ -50,12 +53,17 @@ fun GreetingSection(
                 fontFamily = FontFamily(Font(R.font.oxygen_light)),
             )
         }
-        Icon(
-            painter = painterResource(id = R.drawable.ic_search),
-            contentDescription = "Search",
-            tint = Color.White,
-            modifier = Modifier.size(24.dp)
-                .clickable {  }
-        )
+        IconButton(
+            onClick = {  },
+            modifier = Modifier
+        ) {
+            Icon(
+                painter = painterResource(id = R.drawable.ic_search),
+                contentDescription = "Search",
+                tint = Color.White,
+                modifier = Modifier
+                    .padding(7.5.dp)
+            )
+        }
     }
 }
