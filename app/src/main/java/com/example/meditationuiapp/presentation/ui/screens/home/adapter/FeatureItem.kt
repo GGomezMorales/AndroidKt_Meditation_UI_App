@@ -1,4 +1,4 @@
-package com.example.meditationuiapp.presentation.ui.composables
+package com.example.meditationuiapp.presentation.ui.screens.home.adapter
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -11,7 +11,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,17 +19,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.meditationuiapp.R
 import com.example.meditationuiapp.domain.Feature
-import com.example.meditationuiapp.presentation.ui.standardQuadFromTo
 import com.example.meditationuiapp.presentation.ui.theme.ButtonBlue
 import com.example.meditationuiapp.presentation.ui.theme.TextWhite
+import com.example.meditationuiapp.util.standardQuadFromTo
 
 @Composable
 fun FeatureItem(
@@ -99,35 +96,35 @@ fun FeatureItem(
                 .padding(15.dp)
         ) {
             Text(
+                modifier = Modifier.align(Alignment.TopStart),
                 text = feature.title,
                 color = TextWhite,
                 fontFamily = FontFamily(Font(R.font.oxygen_bold)),
                 fontSize = 18.sp,
-                lineHeight = 26.sp,
-                modifier = Modifier.align(Alignment.TopStart)
+                lineHeight = 26.sp
             )
             Icon(
-                painter = painterResource(id = feature.iconId),
+                modifier = Modifier.align(Alignment.BottomStart),
+                imageVector = feature.icon,
                 contentDescription = feature.title,
-                tint = Color.White,
-                modifier = Modifier.align(Alignment.BottomStart)
+                tint = Color.White
             )
             Button(
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(vertical = 0.dp, horizontal = 0.dp),
                 onClick = { /*TODO*/ },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = ButtonBlue
                 ),
-                shape = RoundedCornerShape(20),
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
-                    .padding(vertical = 0.dp, horizontal = 0.dp)
+                shape = RoundedCornerShape(20)
             ) {
                 Text(
                     text = "Start",
                     color = TextWhite,
                     fontFamily = FontFamily(Font(R.font.oxygen_bold)),
                     fontSize = 14.sp
-                    )
+                )
             }
         }
     }
