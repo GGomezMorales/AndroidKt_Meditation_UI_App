@@ -1,18 +1,15 @@
-package com.example.meditationuiapp.presentation.ui.composables
+package com.example.meditationuiapp.presentation.ui.screens.home.adapter
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.PlayArrow
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.IconButtonDefaults
@@ -23,7 +20,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -41,14 +37,14 @@ fun CurrentMeditationSection(
     meditationTime: String = "3 - 10 min"
 ) {
     Row(
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .padding(15.dp)
             .clip(RoundedCornerShape(10))
             .background(color)
             .padding(horizontal = 15.dp, vertical = 20.dp)
-            .fillMaxWidth()
+            .fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Column(
             verticalArrangement = Arrangement.Center
@@ -68,17 +64,17 @@ fun CurrentMeditationSection(
             )
         }
         IconButton(
-            onClick = {  },
+            modifier = Modifier.size(48.dp),
+            onClick = { },
             colors = IconButtonDefaults.filledIconButtonColors(
                 containerColor = ButtonBlue
-            ),
-            modifier = Modifier.size(48.dp)
+            )
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.ic_play),
+                modifier = Modifier.size(20.dp),
+                imageVector = Icons.Rounded.PlayArrow,
                 contentDescription = "Play",
-                tint = Color.White,
-                modifier = Modifier.size(20.dp)
+                tint = Color.White
             )
         }
     }

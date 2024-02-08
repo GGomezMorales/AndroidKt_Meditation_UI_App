@@ -1,4 +1,4 @@
-package com.example.meditationuiapp.presentation.ui.composables
+package com.example.meditationuiapp.presentation.ui.screens.home.adapter
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,17 +26,16 @@ import com.example.meditationuiapp.presentation.ui.theme.TextWhite
 @Composable
 fun ChipSection(
     chips: List<String>,
-//    selectChipIndexState: Int = 0
+    selectChipIndexState: Int = 0
 ) {
     var selectedChipIndex by remember {
-        mutableIntStateOf(0)
+        mutableIntStateOf(selectChipIndexState)
     }
     LazyRow(
         modifier = Modifier.padding(end = 15.dp)
     ) {
         items(chips.size) {
             Box(
-                contentAlignment = Alignment.Center,
                 modifier = Modifier
                     .padding(start = 15.dp, top = 15.dp, bottom = 15.dp)
                     .clickable {
@@ -47,7 +46,8 @@ fun ChipSection(
                         if (selectedChipIndex == it) ButtonBlue
                         else DarkerButtonBlue
                     )
-                    .padding(15.dp)
+                    .padding(15.dp),
+                contentAlignment = Alignment.Center,
             ) {
                 Text(
                     text = chips[it],
