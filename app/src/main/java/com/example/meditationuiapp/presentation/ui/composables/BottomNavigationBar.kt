@@ -17,14 +17,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.meditationuiapp.presentation.ui.theme.ButtonBlue
-import com.example.meditationuiapp.presentation.ui.theme.DarkerButtonBlue
 import com.example.meditationuiapp.presentation.ui.theme.DeepBlue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomNavigationBar(
-    modifier: Modifier = Modifier,
     navController: NavController,
     items: List<BottomNavItem>,
     onItemClick: (BottomNavItem) -> Unit
@@ -33,7 +30,6 @@ fun BottomNavigationBar(
     NavigationBar(
         modifier = Modifier,
         containerColor = DeepBlue,
-        contentColor = DarkerButtonBlue,
         tonalElevation = 5.dp
     ) {
         items.forEach { item ->
@@ -70,10 +66,9 @@ fun BottomNavigationBar(
                     }
                 },
                 colors = NavigationBarItemDefaults.colors(
-//                    selectedIconColor = Color.Gray,
-//                    unselectedIconColor = Color.Green,
-//                    selectedTextColor = Color.Gray,
-//                    unselectedTextColor = Color.Green
+                    selectedIconColor = DeepBlue,
+                    unselectedIconColor = Color.White,
+                    indicatorColor = Color.White
                 )
             )
         }
