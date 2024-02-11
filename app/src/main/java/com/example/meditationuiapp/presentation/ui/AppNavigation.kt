@@ -42,21 +42,24 @@ fun AppNavigation(
         composable(Screen.SleepScreen.route) {
             SleepScreen(
                 modifier = Modifier
-                    .fillMaxSize(),
+                    .fillMaxSize()
+                    .padding(paddingValues),
                 navController = navController
             )
         }
         composable(Screen.MusicScreen.route) {
             MusicScreen(
                 modifier = Modifier
-                    .fillMaxSize(),
+                    .fillMaxSize()
+                    .padding(paddingValues),
                 navController = navController
             )
         }
         composable(Screen.ProfileScreen.route) {
             ProfileScreen(
                 modifier = Modifier
-                    .fillMaxSize(),
+                    .fillMaxSize()
+                    .padding(paddingValues),
                 navController = navController
             )
         }
